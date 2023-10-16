@@ -45,3 +45,24 @@ services:
 #    privileged: true
 #    devices:
 #      - '/dev/kmsg'
+
+  loki:
+    image: grafana/loki
+    container_name: loki
+    restart: unless-stopped
+    ports:
+      - '3100:3100'
+    volumes:
+      - '$PWD/../data/loki:/loki'
+    command: -config.file=/etc/loki/local-config.yaml
+
+  promtail:
+    image: grafana/promtail
+    container_name: promtail
+    restart: unless-stopped
+    ports:
+      - '9080:9080'
+    volumes:
+      - '$PWD/../resources/promtail.yml:/etc/promtail/promtail.yml'
+      - '$PWD/../data/promtail:/promtail'
+    command: -config.file=/etc/promtail/promtail.yml
