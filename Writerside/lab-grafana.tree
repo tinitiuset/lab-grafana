@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="lab-grafana"
+                 name="lab-grafana"
+                 start-page="Welcome.topic">
+
+    <toc-element topic="Welcome.topic">
+        <toc-element topic="Set-Up.topic"/>
+        <toc-element topic="Observability-Stack-Components.topic"/>
+        <toc-element topic="Node-Exporter.topic"/>
+        <toc-element topic="Prometheus.topic"/>
+        <toc-element topic="PromQL.topic"/>
+        <toc-element topic="Loki.topic"/>
+        <toc-element topic="Grafana.topic"/>
+    </toc-element>
+</instance-profile>

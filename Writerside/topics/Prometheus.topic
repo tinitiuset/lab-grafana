@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Prometheus" id="Prometheus">
+
+    <p>
+        We can access the Prometheus web interface by going to <code>http://localhost:9090</code>
+        in our browser.
+    </p>
+    <p>
+        Under the <ui-path>Status</ui-path> menu, we can see the list of targets that Prometheus is
+        scraping. We can see that Prometheus is scraping itself and Node Exporter.
+        As per our configuration, Prometheus is scraping every 15 seconds.
+    </p>
+    <p>
+        Under the <ui-path>Graph</ui-path> menu, we can see the list of metrics that Prometheus is
+        collecting.
+    </p>
+    <p>
+        Let's try to search for the number of allocated file descriptors in the
+        metrics. To do so, we can search for the <code>node_filefd_allocated</code> metric.
+    </p>
+    <p>
+        The real time value of the metric should be displayed in the graph.
+    </p>
+
+</topic>

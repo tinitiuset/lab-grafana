@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Set Up" id="Set-Up">
+
+    <p>
+        This article will cover the setup needed for the Workshop. Some knowledge of UNIX and the command line is
+        assumed, we will not dive deep into the basics of the command line here.
+    </p>
+
+    <p>
+        The following tools and resources are required for the Workshop:
+    </p>
+
+    <list>
+        <li>Virtual Box</li>
+        <li>The VM image located in <code>/path/to/image</code></li>
+        <li>The <a href="about:blank">repository</a> containing the code for the Workshop</li>
+    </list>
+
+    <chapter title="Before you start" id="before-you-start">
+        <p>
+            Make sure that:
+        </p>
+        <list>
+            <li>VirtualBox is installed on your machine</li>
+            <li>You have at least 20Gb of space in your network drive.</li>
+        </list>
+    </chapter>
+
+    <chapter title="Running the VirtualBox Instance" id="running-vbox">
+        <p>
+            The goal of this section is to get the VM running. If you think you can do this on your own, feel free to
+            skip this section. If you need help, follow the steps below. Feel free to ask for help if you get stuck.
+        </p>
+
+        <procedure>
+            <step>
+                <p>Open VirtualBox GUI</p>
+            </step>
+
+            <step>
+                <p>Click "Import"</p>
+                <tip>
+                    <p><control>Want to know more about importing Virtual Machines?</control></p>
+                    <p>
+                        <a href="https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/ovf.html">This</a> is a
+                        good place to start.
+                    </p>
+                </tip>
+            </step>
+
+            <step>
+                <p>Run the Virtual Machine</p>
+                <p>
+                    For this lab, we will use a virtual machine running Ubuntu Server which will
+                    come preconfigured for us.
+                </p>
+                <p>
+                    Ubuntu Server does not come with a graphical user interface (GUI) by default,
+                    so we will need to use the command line to interact with it. This is a great
+                    opportunity to deepen your knowledge of the Linux command line.
+                </p>
+                <note>
+                    <p><control>Default credentials of the VM</control></p>
+                    <p>
+                        Are <code>lab</code> and <code>grafana-lab</code>.
+                    </p>
+                </note>
+            </step>
+            <step>
+                <p>Make sure networking is properly set-up.</p>
+                <p>
+                    We have to make sure that the virtual machine has a bridged network adapter
+                    so that it can be accessed from the host machine. We also have to make sure
+                    that the virtual machine has a static IP address so that we can always access
+                    it from the same address.
+                </p>
+
+                <code-block lang="bash">ip addr</code-block>
+
+                <tip>
+                    <p><control>Remember your IP address.</control></p>
+                    <p>
+                        This will be extremely important later on.
+                    </p>
+                </tip>
+            </step>
+            <step>
+                <p>As performance on virtual machines can be quite poor, it is recommended to
+                    ssh into the virtual machine from your host machine. This will allow you to
+                    use your host machine's terminal to interact with the virtual machine.</p>
+
+                <code-block lang="bash">
+                    ssh &lt;username&gt;@&lt;ip-address&gt;
+                </code-block>
+            </step>
+            <step>
+                <p>Once you are connected to the virtual machine, verify that your system is
+                    indeed Ubuntu Server.</p>
+
+                <code-block lang="bash">
+                    lsb_release -a
+                </code-block>
+            </step>
+            <step>
+                <p>Make sure docker-compose is installed on the virtual machine.</p>
+
+                <code-block lang="bash">
+                    docker-compose --version
+                </code-block>
+            </step>
+            <step>
+                <p>Make sure git is installed on the virtual machine.</p>
+
+                <code-block lang="bash">
+                    git --version
+                </code-block>
+            </step>
+        </procedure>
+        <warning>
+            <p><control>This section needs coverage.</control></p>
+            <p>
+                Don't forget to remove the warning when you're done.
+            </p>
+        </warning>
+    </chapter>
+
+    <chapter title="Setting up the working environment" id="setup-environment">
+        <p>
+            The goal of this section is to set up the working environment and deploy our Services. If you think you can
+            do this on your own, feel free to skip this section. If you need help, follow the steps below.
+        </p>
+
+        <procedure>
+            <step>
+                Select a directory to work in. This tutorial will assume: <code>/home/lab</code>
+            </step>
+            <step>
+                Clone the repository: <code-block lang="bash">git clone https://github.com/tinitiuset/lab-grafana.git</code-block>
+            </step>
+            <step>
+                Head into the utilities directory on the repository: <code-block lang="bash">cd lab-grafana/utilities</code-block>
+            </step>
+            <step>
+
+                <p>
+                    Wake up the services:
+                </p>
+
+                <code-block lang="bash">docker-compose up -d</code-block>
+
+                <tip>
+                    <p><control>Want to know more about Docker and Compose?</control></p>
+                    <p>
+                        <a href="https://docs.docker.com/engine/">This</a> and
+                        <a href="https://docs.docker.com/compose/">this</a> are good places to start.
+                    </p>
+                </tip>
+            </step>
+
+            <step>
+                <p>
+                    Check that the services are running:
+                </p>
+
+                <code-block lang="bash">docker-compose ps</code-block>
+
+                <p>
+                    You should be able to ensure that all services are running given the output of the command.
+                </p>
+
+                <note>
+                    <p>
+                        This procedure is pretty straightforward, but it's important to make sure that the services are
+                        running before moving on. If you feel like services are not running, recheck the steps above.
+                    </p>
+                </note>
+                <warning>
+                    <p>
+                        If you're not able to get the services running and you've tried everything, ask for help before
+                        moving on.
+                    </p>
+                </warning>
+
+            </step>
+        </procedure>
+    </chapter>
+
+    <chapter title="What you've learned" id="what-learned">
+        <p>At this point, you should have your Observability stack up and running. </p>
+        <p> We can now move on to the next section.</p>
+    </chapter>
+</topic>

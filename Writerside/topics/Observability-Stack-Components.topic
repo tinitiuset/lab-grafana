@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Observability Stack Components" id="Observability-Stack-Components">
+
+    <p>
+        An observability stack is a set of tools that are used to monitor and
+        understand a system infrastructure. They can be spread across multiple
+        machines and are usually deployed as
+        <a href="https://www.ibm.com/topics/containers">containers</a>. The tools
+        in the stack are used to collect data about the system and to visualize
+        the data in a way that makes it easy to understand the behavior of the
+        system infrastructure.
+    </p>
+
+    <chapter title="Pillars" id="pillars">
+        <p>The three pillars of an observability stack are:</p>
+        <deflist>
+            <def title="Metrics">
+                A metric is a measurement of a system's state. Metrics are usually
+                collected at regular intervals and are used to understand the behavior of the
+                system over time.
+            </def>
+            <def title="Logs">
+                Logs are records of events that happened in a system. Logs are usually
+                used to understand the behavior of the system at a specific point in time.
+            </def>
+            <def title="Traces">
+                Traces are records of the path of a request through a system. Traces
+                are usually used to understand the behavior of the system when handling a
+                request.
+            </def>
+        </deflist>
+    </chapter>
+    <chapter title="Tools" id="tools">
+        <p>The tools that make up our observability stack are:</p>
+        <deflist>
+            <def title="Grafana">
+                <p>
+                    <a href="https://grafana.com/">Grafana</a> is an open source metric
+                    analytics and visualization suite.
+                    It is most commonly used for visualizing time series data for
+                    infrastructure and application analytics.
+                </p>
+            </def>
+            <def title="Prometheus">
+                <p>
+                    <a href="https://prometheus.io/">Prometheus</a> is an open-source
+                    systems monitoring and alerting toolkit.
+                </p>
+            </def>
+            <def title="Node Exporter">
+                <p>
+                    <a href="https://github.com/prometheus/node_exporter">Node Exporter</a>
+                    collects metrics about the host machine and sends them to Prometheus.
+                </p>
+            </def>
+            <def title="cAdvisor">
+                <p>
+                    <a href="https://grafana.com/loki">cAdvisor</a> analyzes resource usage
+                    and performance characteristics of running containers.
+                </p>
+            </def>
+            <def title="Loki">
+                <p>
+                    <a href="https://grafana.com/loki">Loki</a> is a horizontally-scalable,
+                    highly-available, multi-tenant log aggregation system inspired by Prometheus.
+                </p>
+            </def>
+            <def title="Promtail">
+                <p>
+                    <a href="https://grafana.com/docs/loki/latest/clients/promtail/">Promtail</a>
+                     ships the contents of local logs to a private Loki instance.
+
+                </p>
+            </def>
+        </deflist>
+
+    </chapter>
+</topic>

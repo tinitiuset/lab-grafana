@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Node Exporter" id="Node-Exporter">
+
+    <title>
+        Node-Exporter
+    </title>
+    <p>
+        Node Exporter is an agent that collects metrics about the host machine and
+        sends them to Prometheus.
+    </p>
+    <p>
+        We can access the metrics collected by Node Exporter by going to
+        <a href="http://localhost:9100/metrics">http://localhost:9100/metrics</a> in our
+        browser.
+    </p>
+    <p>
+        Node exporter exports a lot of metrics, some of them are easily understandable
+        and some of them are not. Even if we don't understand all the metrics, they can
+        still be useful to us.
+    </p>
+    <p>
+        Let's try to search for the number of allocated file descriptors in the metrics.
+    </p>
+    <code-block lang="bash">
+        curl -s http://localhost:9100/metrics | grep node_filefd_allocated
+    </code-block>
+    <p>
+        The metric is not only composed of a name and a value, it also has labels that
+        give us more information about the metric:
+    </p>
+    <list>
+        <li>
+            <p>
+                The <code>help</code> label that gives us a description of the metric.
+            </p>
+        </li>
+        <li>
+            <p>
+                The <code>type</code> label that tells us that the metric is a <code>gauge</code>.
+                A gauge is a metric that can go up and down over time.
+            </p>
+        </li>
+    </list>
+</topic>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rules SYSTEM "https://resources.jetbrains.com/writerside/1.0/redirection-rules.dtd">
+<rules>
+    <!-- format is as follows
+    <rule id="<unique id>">
+        <accepts>page.html</accepts>
+    </rule>
+    -->
+    <rule id="263b9a93">
+        <description>Created after removal of "About lab-grafana" from lab-grafana</description>
+        <accepts>starter-topic.html</accepts>
+    </rule>
+    <rule id="2e7c8ce5">
+        <description>Created after removal of "Tutorial" from lab-grafana</description>
+        <accepts>Tutorial.html</accepts>
+    </rule>
+</rules>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="PromQL" id="PromQL">
+
+    <title>
+        PromQL
+    </title>
+    <p>
+        PromQL is the query language used to query Prometheus. It is a functional
+        language that allows us to select and aggregate metrics.
+    </p>
+    <chapter title="Basic Queries" id="basic-queries">
+        <chapter title="Selecting a metric" id="selecting-a-metric">
+            <p>
+                To select a metric, we can use its name. For example, to select the <code>node_filefd_allocated</code>
+                metric, we can use the following query:
+            </p>
+
+            <code-block lang="promql">
+                node_filefd_allocated
+            </code-block>
+        </chapter>
+        <chapter title="Filtering by label" id="filtering-by-label">
+            <p>
+                To filter a metric by label, we can use curly braces (<code>{}</code>) to specify the label
+            </p>
+            <p>
+                For example, to select the <code>node_filefd_allocated</code> metric with the <code>job</code>
+                label set to <code>node_exporter</code>:
+            </p>
+
+            <code-block lang="promql">
+                node_filefd_allocated{job=&quot;node_exporter&quot;}
+            </code-block>
+        </chapter>
+    </chapter>
+
+</topic>

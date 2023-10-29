@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Grafana" id="Grafana">
+
+    <p>
+        Grafana is a visualization tool for metrics, logs, and traces.
+    </p>
+    <p>
+        Grafana by itself does not collect any data. It is a frontend that allows us to
+        visualize data collected by other tools.
+    </p>
+    <p>
+        In this lab, we will use Grafana to visualize metrics collected by Prometheus
+        and logs and traces collected by Loki.
+    </p>
+    <p>
+        With our observability stack deployed, we can access Grafana at
+        <a href="http://localhost:3000">http://localhost:3000</a>.
+    </p>
+    <p>
+        We will be greeted by the login page. The default username and password are
+        <code>admin</code> and <code>admin</code>.
+    </p>
+    <p>
+        Once logged in, we will be greeted by the home page. The home page
+        will guide us through the process of adding a data source and creating a
+        dashboard.
+    </p>
+    <p>
+        We will start by adding Prometheus as a data source. To do so, we can click on
+        the <ui-path>Add Data Source</ui-path> button.
+    </p>
+    <p>
+        In the data source configuration page, we can select <ui-path>Prometheus</ui-path> as the type
+        of data source. We can then configure the URL of the Prometheus server. In our case, the URL
+        is <a href="http://prometheus:9090">http://prometheus:9090</a>. We can then click on the <ui-path>Save &amp;
+        Test</ui-path> button to test the connection to the Prometheus server.
+    </p>
+    <p>
+        We should be able to add Loki as a data source in the same way. The URL of the
+        Loki server is <a href="http://loki:3100">http://loki:3100</a>. We can then click on the <ui-path>Save
+        &amp; Test</ui-path> button to test the connection to the Loki server.
+    </p>
+    <p>
+        Once we have our data sources configured, grafana is now able to query the data
+        collected by Prometheus and Loki.
+    </p>
+
+</topic>
