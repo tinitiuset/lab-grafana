@@ -19,10 +19,10 @@ scrape_configs:
           job: varlogs
           __path__: /var/log/*log
 
-#  - job_name: philo
-#    static_configs:
-#      - targets:
-#          - localhost
-#        labels:
-#          job: philo
-#          __path__: /philo/*log
+  - job_name: philo
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: philo
+          __path__: /philo/*log

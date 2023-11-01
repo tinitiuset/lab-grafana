@@ -1,0 +1,29 @@
+services:
+  philo1:
+    image: philo
+    build: .
+    volumes:
+      - '$PWD/../../data/philo:/var/log/philo'
+    environment:
+      - PHILO_ARGS=5 800 200 200
+  philo2:
+    image: philo
+    build: .
+    volumes:
+      - '$PWD/../../data/philo:/var/log/philo'
+    environment:
+      - PHILO_ARGS=5 800 200 200
+  philo3:
+    image: philo
+    build: .
+    volumes:
+      - '$PWD/../../data/philo:/var/log/philo'
+    environment:
+      - PHILO_ARGS=5 800 200 200
+  philo4:
+    image: philo
+    build: .
+    volumes:
+      - '$PWD/../../data/philo:/var/log/philo'
+    environment:
+      - PHILO_ARGS=5 800 200 200
