@@ -14,4 +14,16 @@
         <description>Created after removal of "Tutorial" from lab-grafana</description>
         <accepts>Tutorial.html</accepts>
     </rule>
+    <rule id="330bd567">
+        <description>Created after removal of "Service-Walkthrough" from lab-grafana</description>
+        <accepts>Service-Walkthrough.html</accepts>
+    </rule>
+    <rule id="40e66fa5">
+        <description>Created after removal of "Our infraestructure in a graphic way" from lab-grafana</description>
+        <accepts>Our-infraestructure-in-a-graphic-way.html</accepts>
+    </rule>
+    <rule id="4a5cfe8d">
+        <description>Created after removal of "Adding Node Exporter Dashboard" from lab-grafana</description>
+        <accepts>Adding-Node-Exporter-Dashboard.html</accepts>
+    </rule>
 </rules>

@@ -45,7 +45,7 @@
                     infrastructure and application analytics.
                 </p>
             </def>
-            <def title="Prometheus">
+            <def title="Prometheus" >
                 <p>
                     <a href="https://prometheus.io/">Prometheus</a> is an open-source
                     systems monitoring and alerting toolkit.
@@ -55,6 +55,12 @@
                 <p>
                     <a href="https://github.com/prometheus/node_exporter">Node Exporter</a>
                     collects metrics about the host machine and sends them to Prometheus.
+                </p>
+            </def>
+            <def title="Blackbox Exporter">
+                <p>
+                    <a href="https://github.com/prometheus/blackbox_exporter">Blackbox Exporter</a>
+                    collects metrics about a target by probing it using HTTP, HTTPS, DNS, TCP, and ICMP.
                 </p>
             </def>
             <def title="cAdvisor">

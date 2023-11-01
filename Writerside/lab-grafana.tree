@@ -7,12 +7,17 @@
                  start-page="Welcome.topic">
 
     <toc-element topic="Welcome.topic">
+        <toc-element topic="General-context.md"/>
         <toc-element topic="Set-Up.topic"/>
         <toc-element topic="Observability-Stack-Components.topic"/>
+        <toc-element topic="Simple-infraestructure-in-a-graphic-way.topic"/>
         <toc-element topic="Node-Exporter.topic"/>
         <toc-element topic="Prometheus.topic"/>
         <toc-element topic="PromQL.topic"/>
         <toc-element topic="Loki.topic"/>
         <toc-element topic="Grafana.topic"/>
     </toc-element>
+    <toc-element topic="Introduction-to-Grafana-Dashboards.topic"/>
+    <toc-element topic="Deploying-our-first-Application.topic"/>
+    <toc-element topic="Now-we-ll-have-a-Cluster.topic"/>
 </instance-profile>
