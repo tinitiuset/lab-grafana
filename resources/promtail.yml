@@ -26,3 +26,10 @@ scrape_configs:
         labels:
           job: philo
           __path__: /philo/*log
+  - job_name: push-swap
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: philo
+          __path__: /push-swap/*log

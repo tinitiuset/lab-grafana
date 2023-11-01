@@ -66,6 +66,7 @@ services:
       - '$PWD/../resources/promtail.yml:/etc/promtail/promtail.yml'
       - '$PWD/../data/promtail:/promtail'
       - '$PWD/../data/philo:/philo'
+      - '$PWD/../data/push-swap:/push-swap'
     command: -config.file=/etc/promtail/promtail.yml
 
   blackbox:
