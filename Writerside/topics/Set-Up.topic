@@ -3,117 +3,117 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="Set Up" id="Set-Up">
+       title="Configuración" id="Set-Up">
 
     <p>
-        This article will cover the setup needed for the Workshop. Some knowledge of UNIX and the command line is
-        assumed, we will not dive deep into the basics of the command line here.
+        Este artículo cubrirá la configuración necesaria para el taller. Se asume cierto conocimiento de UNIX y la línea de comandos;
+        no nos sumergiremos profundamente en los conceptos básicos de la línea de comandos aquí.
     </p>
 
     <p>
-        The following tools and resources are required for the Workshop:
+        Se requieren las siguientes herramientas y recursos para el taller:
     </p>
 
     <list>
         <li>Virtual Box</li>
-        <li>The VM image located in <code>/path/to/image</code></li>
-        <li>The <a href="https://github.com/tinitiuset/lab-grafana.git">repository</a> containing the code for the Workshop</li>
+        <li>La imagen de la máquina virtual ubicada en <code>/ruta/a/imagen</code></li>
+        <li>El <a href="https://github.com/tinitiuset/lab-grafana.git">repositorio</a> que contiene el código para el taller</li>
     </list>
 
-    <chapter title="Before you start" id="before-you-start">
+    <chapter title="Antes de comenzar" id="before-you-start">
         <p>
-            Make sure that:
+            Asegúrate de que:
         </p>
         <list>
-            <li>VirtualBox is installed on your machine</li>
-            <li>You have at least 20Gb of space in your network drive.</li>
+            <li>VirtualBox esté instalado en tu máquina</li>
+            <li>Tienes al menos 20 GB de espacio en tu unidad de red.</li>
         </list>
     </chapter>
 
-    <chapter title="Running the VirtualBox Instance" id="running-vbox">
+    <chapter title="Ejecución de la Instancia VirtualBox" id="running-vbox">
         <p>
-            The goal of this section is to get the VM running. If you think you can do this on your own, feel free to
-            skip this section. If you need help, follow the steps below. Feel free to ask for help if you get stuck.
+            El objetivo de esta sección es poner en funcionamiento la máquina virtual. Si crees que puedes hacer esto por ti mismo,
+            siéntete libre de saltarte esta sección. Si necesitas ayuda, sigue los pasos a continuación. No dudes en pedir ayuda si
+            te quedas atascado.
         </p>
 
         <procedure>
             <step>
-                <p>Open VirtualBox GUI</p>
+                <p>Abre la interfaz gráfica de VirtualBox</p>
             </step>
 
             <step>
-                <p>Click "Import"</p>
+                <p>Haz clic en "Importar"</p>
                 <tip>
-                    <p><control>Want to know more about importing Virtual Machines?</control></p>
+                    <p><control>¿Quieres saber más sobre la importación de Máquinas Virtuales?</control></p>
                     <p>
-                        <a href="https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/ovf.html">This</a> is a
-                        good place to start.
+                        <a href="https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/ovf.html">Esto</a> es un buen punto
+                        de partida.
                     </p>
                 </tip>
             </step>
 
             <step>
-                <p>Run the Virtual Machine</p>
+                <p>Ejecuta la Máquina Virtual</p>
                 <p>
-                    For this lab, we will use a virtual machine running Ubuntu Server which will
-                    come preconfigured for us.
+                    Para este laboratorio, utilizaremos una máquina virtual con Ubuntu Server que vendrá preconfigurada.
                 </p>
                 <p>
-                    Ubuntu Server does not come with a graphical user interface (GUI) by default,
-                    so we will need to use the command line to interact with it. This is a great
-                    opportunity to deepen your knowledge of the Linux command line.
+                    Ubuntu Server no incluye una interfaz gráfica de usuario (GUI) por defecto,
+                    así que tendremos que usar la línea de comandos para interactuar con ella. Esta es una excelente
+                    oportunidad para profundizar en tu conocimiento de la línea de comandos de Linux.
                 </p>
                 <note>
-                    <p><control>Default credentials of the VM</control></p>
+                    <p><control>Credenciales predeterminadas de la Máquina Virtual</control></p>
                     <p>
-                        Are <code>lab</code> and <code>grafana-lab</code>.
+                        Son <code>lab</code> y <code>grafana-lab</code>.
                     </p>
                 </note>
             </step>
             <step>
-                <p>Make sure networking is properly set-up.</p>
+                <p>Asegúrate de que la configuración de red esté correctamente establecida.</p>
                 <p>
-                    We have to make sure that the virtual machine has a bridged network adapter
-                    so that it can be accessed from the host machine. We also have to make sure
-                    that the virtual machine has a static IP address so that we can always access
-                    it from the same address.
+                    Debemos asegurarnos de que la máquina virtual tenga un adaptador de red puenteado
+                    para que se pueda acceder desde la máquina host. También debemos asegurarnos
+                    de que la máquina virtual tenga una dirección IP estática para poder acceder
+                    a ella siempre desde la misma dirección.
                 </p>
 
                 <code-block lang="bash">ip addr</code-block>
 
                 <tip>
-                    <p><control>Remember your IP address.</control></p>
+                    <p><control>Recuerda tu dirección IP.</control></p>
                     <p>
-                        This will be extremely important later on.
+                        Esto será extremadamente importante más adelante.
                     </p>
                 </tip>
             </step>
             <step>
-                <p>As performance on virtual machines can be quite poor, it is recommended to
-                    ssh into the virtual machine from your host machine. This will allow you to
-                    use your host machine's terminal to interact with the virtual machine.</p>
+                <p>Dado que el rendimiento en máquinas virtuales puede ser bastante pobre, se recomienda
+                    conectarse por SSH a la máquina virtual desde la máquina host. Esto te permitirá
+                    utilizar la terminal de la máquina host para interactuar con la máquina virtual.</p>
 
                 <code-block lang="bash">
-                    ssh &lt;username&gt;@&lt;ip-address&gt;
+                    ssh &lt;nombre-de-usuario&gt;@&lt;dirección-ip&gt;
                 </code-block>
             </step>
             <step>
-                <p>Once you are connected to the virtual machine, verify that your system is
-                    indeed Ubuntu Server.</p>
+                <p>Una vez conectado a la máquina virtual, verifica que tu sistema sea
+                    efectivamente Ubuntu Server.</p>
 
                 <code-block lang="bash">
                     lsb_release -a
                 </code-block>
             </step>
             <step>
-                <p>Make sure docker-compose is installed on the virtual machine.</p>
+                <p>Asegúrate de que Docker Compose esté instalado en la máquina virtual.</p>
 
                 <code-block lang="bash">
                     docker-compose --version
                 </code-block>
             </step>
             <step>
-                <p>Make sure git is installed on the virtual machine.</p>
+                <p>Asegúrate de que Git esté instalado en la máquina virtual.</p>
 
                 <code-block lang="bash">
                     git --version
@@ -121,80 +121,80 @@
             </step>
         </procedure>
         <warning>
-            <p><control>This section needs coverage.</control></p>
+            <p><control>Esta sección necesita cobertura.</control></p>
             <p>
-                Don't forget to remove the warning when you're done.
+                No olvides eliminar la advertencia cuando hayas terminado.
             </p>
         </warning>
     </chapter>
 
-    <chapter title="Setting up the working environment" id="setup-environment">
+    <chapter title="Configuración del Entorno de Trabajo" id="setup-environment">
         <p>
-            The goal of this section is to set up the working environment and deploy our Services. If you think you can
-            do this on your own, feel free to skip this section. If you need help, follow the steps below.
+            El objetivo de esta sección es configurar el entorno de trabajo e implementar nuestros servicios. Si crees que puedes
+            hacer esto por ti mismo, siéntete libre de saltarte esta sección. Si necesitas ayuda, sigue los pasos a continuación.
         </p>
 
         <procedure>
             <step>
-                Select a directory to work in. This tutorial will assume: <code>/home/lab</code>
+                Selecciona un directorio para trabajar. Este tutorial asumirá: <code>/home/lab</code>
             </step>
             <step>
-                Clone the repository: <code-block lang="bash">git clone https://github.com/tinitiuset/lab-grafana.git</code-block>
+                Clona el repositorio: <code-block lang="bash">git clone https://github.com/tinitiuset/lab-grafana.git</code-block>
             </step>
             <step>
-                Head into the utilities directory on the repository: <code-block lang="bash">cd lab-grafana/utilities</code-block>
+                Dirígete al directorio de utilidades en el repositorio: <code-block lang="bash">cd lab-grafana/utilities</code-block>
             </step>
             <step>
                 <p>
-                    Run:
+                    Ejecuta:
                 </p>
                 <code-block lang="bash">
-                chmod 777 ../data/*
+                    chmod 777 ../data/*
                 </code-block>
                 <warning>
                     <p>
-                        Never run <code>chmod 777</code> on a production system.
+                        Nunca ejecutes <code>chmod 777</code> en un sistema de producción.
                     </p>
                 </warning>
             </step>
             <step>
 
                 <p>
-                    Wake up the services:
+                    Despierta los servicios:
                 </p>
 
                 <code-block lang="bash">docker-compose up -d</code-block>
 
                 <tip>
-                    <p><control>Want to know more about Docker and Compose?</control></p>
+                    <p><control>¿Quieres saber más sobre Docker y Compose?</control></p>
                     <p>
-                        <a href="https://docs.docker.com/engine/">This</a> and
-                        <a href="https://docs.docker.com/compose/">this</a> are good places to start.
+                        <a href="https://docs.docker.com/engine/">Esto</a> y
+                        <a href="https://docs.docker.com/compose/">esto</a> son buenos lugares para empezar.
                     </p>
                 </tip>
             </step>
 
             <step>
                 <p>
-                    Check that the services are running:
+                    Verifica que los servicios estén en ejecución:
                 </p>
 
                 <code-block lang="bash">docker-compose ps</code-block>
 
                 <p>
-                    You should be able to ensure that all services are running given the output of the command.
+                    Deberías asegurarte de que todos los servicios estén en ejecución según la salida del comando.
                 </p>
 
                 <note>
                     <p>
-                        This procedure is pretty straightforward, but it's important to make sure that the services are
-                        running before moving on. If you feel like services are not running, recheck the steps above.
+                        Este procedimiento es bastante sencillo, pero es importante asegurarse de que los servicios estén
+                        en ejecución antes de continuar. Si sientes que los servicios no están en ejecución, vuelve a revisar
+                        los pasos anteriores.
                     </p>
                 </note>
                 <warning>
                     <p>
-                        If you're not able to get the services running and you've tried everything, ask for help before
-                        moving on.
+                        Si no puedes hacer que los servicios se ejecuten y has intentado todo, pide ayuda antes de continuar.
                     </p>
                 </warning>
 
@@ -202,8 +202,8 @@
         </procedure>
     </chapter>
 
-    <chapter title="What you've learned" id="what-learned">
-        <p>At this point, you should have your Observability stack up and running. </p>
-        <p> We can now move on to the next section.</p>
+    <chapter title="Lo que has aprendido" id="what-learned">
+        <p>Llegados a este punto, deberías tener tu stack de observabilidad en funcionamiento. </p>
+        <p> Ahora podemos pasar a la siguiente sección.</p>
     </chapter>
 </topic>

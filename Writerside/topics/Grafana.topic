@@ -6,47 +6,47 @@
        title="Grafana" id="Grafana">
 
     <p>
-        Grafana is a visualization tool for metrics, logs, and traces.
+        Grafana es una herramienta de visualización para métricas, registros y trazas.
     </p>
     <p>
-        Grafana by itself does not collect any data. It is a frontend that allows us to
-        visualize data collected by other tools.
+        Grafana por sí sola no recopila ningún dato. Es una interfaz que nos permite
+        visualizar datos recopilados por otras herramientas.
     </p>
     <p>
-        In this lab, we will use Grafana to visualize metrics collected by Prometheus
-        and logs and traces collected by Loki.
+        En este taller, utilizaremos Grafana para visualizar métricas recopiladas por Prometheus
+        y registros y trazas recopilados por Loki.
     </p>
     <p>
-        With our observability stack deployed, we can access Grafana at
+        Con nuestro stack de observabilidad desplegado, podemos acceder a Grafana en
         <a href="http://localhost:3000">http://localhost:3000</a>.
     </p>
     <p>
-        We will be greeted by the login page. The default username and password are
-        <code>admin</code> and <code>admin</code>.
+        Nos recibirá la página de inicio de sesión. El nombre de usuario y la contraseña predeterminados son
+        <code>admin</code> y <code>admin</code>.
     </p>
     <p>
-        Once logged in, we will be greeted by the home page. The home page
-        will guide us through the process of adding a data source and creating a
-        dashboard.
+        Una vez iniciada la sesión, nos recibirá la página de inicio. La página de inicio
+        nos guiará a través del proceso de agregar un origen de datos y crear un
+        panel de control.
     </p>
     <p>
-        We will start by adding Prometheus as a data source. To do so, we can click on
-        the <ui-path>Add Data Source</ui-path> button.
+        Comenzaremos agregando Prometheus como origen de datos. Para hacerlo, podemos hacer clic en
+        el botón <ui-path>Agregar origen de datos</ui-path>.
     </p>
     <p>
-        In the data source configuration page, we can select <ui-path>Prometheus</ui-path> as the type
-        of data source. We can then configure the URL of the Prometheus server. In our case, the URL
-        is <a href="http://prometheus:9090">http://prometheus:9090</a>. We can then click on the <ui-path>Save &amp;
-        Test</ui-path> button to test the connection to the Prometheus server.
+        En la página de configuración del origen de datos, podemos seleccionar <ui-path>Prometheus</ui-path> como el tipo
+        de origen de datos. Luego podemos configurar la URL del servidor de Prometheus. En nuestro caso, la URL
+        es <a href="http://prometheus:9090">http://prometheus:9090</a>. Luego podemos hacer clic en el botón <ui-path>Guardar
+        y probar</ui-path> para probar la conexión con el servidor de Prometheus.
     </p>
     <p>
-        We should be able to add Loki as a data source in the same way. The URL of the
-        Loki server is <a href="http://loki:3100">http://loki:3100</a>. We can then click on the <ui-path>Save
-        &amp; Test</ui-path> button to test the connection to the Loki server.
+        Deberíamos poder agregar Loki como origen de datos de la misma manera. La URL del
+        servidor de Loki es <a href="http://loki:3100">http://loki:3100</a>. Luego podemos hacer clic en el botón <ui-path>Guardar
+        y probar</ui-path> para probar la conexión con el servidor de Loki.
     </p>
     <p>
-        Once we have our data sources configured, grafana is now able to query the data
-        collected by Prometheus and Loki.
+        Una vez que tenemos nuestras fuentes de datos configuradas, Grafana ahora puede consultar los datos
+        recopilados por Prometheus y Loki.
     </p>
 
 </topic>

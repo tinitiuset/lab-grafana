@@ -6,24 +6,24 @@
        title="Prometheus" id="Prometheus">
 
     <p>
-        We can access the Prometheus web interface by going to <code>http://localhost:9090</code>
-        in our browser.
+        Podemos acceder a la interfaz web de Prometheus yendo a <code>http://localhost:9090</code>
+        en nuestro navegador.
     </p>
     <p>
-        Under the <ui-path>Status</ui-path> menu, we can see the list of targets that Prometheus is
-        scraping. We can see that Prometheus is scraping itself and Node Exporter.
-        As per our configuration, Prometheus is scraping every 15 seconds.
+        En el menú <ui-path>Status</ui-path>, podemos ver la lista de objetivos que Prometheus está
+        scrapeando. Podemos ver que Prometheus se está scrapeando a sí mismo y a Node Exporter.
+        Según nuestra configuración, Prometheus está scrapeando cada 15 segundos.
     </p>
     <p>
-        Under the <ui-path>Graph</ui-path> menu, we can see the list of metrics that Prometheus is
-        collecting.
+        En el menú <ui-path>Graph</ui-path>, podemos ver la lista de métricas que Prometheus está
+        recopilando.
     </p>
     <p>
-        Let's try to search for the number of allocated file descriptors in the
-        metrics. To do so, we can search for the <code>node_filefd_allocated</code> metric.
+        Intentemos buscar el número de descriptores de archivo asignados en las
+        métricas. Para hacerlo, podemos buscar la métrica <code>node_filefd_allocated</code>.
     </p>
     <p>
-        The real time value of the metric should be displayed in the graph.
+        El valor en tiempo real de la métrica debería mostrarse en el gráfico.
     </p>
 
 </topic>

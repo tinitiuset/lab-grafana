@@ -3,26 +3,26 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="Welcome" id="Welcome">
+       title="Bienvenido" id="Welcome">
 
     <section-starting-page>
-        <title>Welcome to Grafana Lab!</title>
+        <title>¡Bienvenido a Grafana Lab!</title>
         <description>
-            This section will contain the necesary information and tutorials to understand the basics of an Observability stack.
+            Esta sección contendrá la información y tutoriales necesarios para entender los conceptos básicos de un stack de observabilidad.
 
         </description>
 
         <primary>
-            <title>Context and Lab Setup</title>
+            <title>Contexto y Configuración del Taller</title>
             <a href="General-context.md"/>
-            <a href="Set-Up.topic">Set up the Lab</a>
+            <a href="Set-Up.topic">Configurar el Taller</a>
             <a href="Observability-Stack-Components.topic"/>
             <a href="Simple-infraestructure-in-a-graphic-way.topic"
-               summary="This section is for you."> Are you a visual learner? </a>
+               summary="Esta sección es para ti."> ¿Eres un aprendiz visual? </a>
         </primary>
 
         <secondary>
-            <title>Diving into some of the components of an Observability stack</title>
+            <title>Adentrándonos en algunos de los componentes de un stack de observabilidad</title>
             <a href="Node-Exporter.topic"/>
             <a href="Prometheus.topic"/>
             <a href="Loki.topic"/>
@@ -32,13 +32,13 @@
         <misc>
             <links>
                 <group>
-                    <title>Related topics</title>
-                    <a href="https://play.grafana.org">Play with Grafana</a>
+                    <title>Temas Relacionados</title>
+                    <a href="https://play.grafana.org">Juega con Grafana</a>
                     <a href="https://grafana.com/">Grafana</a>
                     <a href="https://prometheus.io/">Prometheus</a>
                     <a href="https://openmetrics.io/">Open Metrics</a>
-                    <a href="https://www.atlassian.com/devops">What is Devops? by Atlassian</a>
-                    <a href="https://aws.amazon.com/microservices/">Micro Services by AWS</a>
+                    <a href="https://www.atlassian.com/devops">¿Qué es DevOps? por Atlassian</a>
+                    <a href="https://aws.amazon.com/microservices/">Microservicios por AWS</a>
                 </group>
             </links>
         </misc>

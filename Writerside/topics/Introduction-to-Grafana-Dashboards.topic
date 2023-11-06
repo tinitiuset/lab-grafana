@@ -3,229 +3,228 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="Introduction to Grafana Dashboards" id="Introduction-to-Grafana-Dashboards">
+       title="Introducción a los Paneles de Grafana" id="Introduction-to-Grafana-Dashboards">
 
     <p>
-        Grafana dashboards are a powerful way to visualize data. They allow you to
-        define how data is displayed and how users can interact with it.
+        Los paneles de Grafana son una muy flexible de visualizar datos. Te permiten
+        definir cómo se muestran los datos y cómo los usuarios pueden interactuar con ellos.
 
-        This tutorial will show you how to import a dashboard, customize it, and
-        share it with your team.
+        Este tutorial te mostrará cómo importar un panel, personalizarlo y
+        compartirlo con tu equipo.
     </p>
 
-    <chapter title="Before you start" id="before-you-start">
+    <chapter title="Antes de comenzar" id="before-you-start">
         <p>
-            Make sure Grafana and the Prometheus data source are installed, configured
-            and running.
+            Asegúrate de que Grafana y la fuente de datos de Prometheus estén instaladas, configuradas
+            y en ejecución.
         </p>
     </chapter>
 
-    <chapter title="Importing a Dashboard" id="import-dashboard">
+    <chapter title="Importar un Panel" id="import-dashboard">
         <p>
-            Grafana comes with a number of built-in dashboards. You can also import
-            dashboards from the Grafana website or from a JSON file. As a first step,
-            we'll import a dashboard from the Grafana website.
+            Grafana viene con varios paneles integrados. También puedes importar
+            paneles desde el sitio web de Grafana o desde un archivo JSON. Como primer paso,
+            importaremos un panel desde el sitio web de Grafana.
         </p>
         <note>
             <p>
-                This tutorial will import the
+                Este tutorial importará el panel
                 <a href="https://grafana.com/grafana/dashboards/1860">Node Exporter Full</a>
                 dashboard.
             </p>
         </note>
         <note>
             <p>
-                Want to try something different?
-                Try importing <a href="https://grafana.com/grafana/dashboards/14282-cadvisor-exporter/">cAdvisor Exporter</a>
-                dashboard instead.
+                ¿Quieres probar algo diferente?
+                Intenta importar <a href="https://grafana.com/grafana/dashboards/14282-cadvisor-exporter/">cAdvisor Exporter</a>
+                en su lugar.
             </p>
         </note>
 
         <procedure>
             <step>
                 <p>
-                    Head over to the
-                    <a href="https://grafana.com/grafana/dashboards">Grafana Dashboards</a>
-                    page and search for <ui-path>Node Exporter</ui-path>.
+                    Dirígete a la
+                    <a href="https://grafana.com/grafana/dashboards">página de Paneles de Grafana</a>
+                    y busca <ui-path>Node Exporter</ui-path>.
                 </p>
             </step>
 
             <step>
                 <p>
-                    The dashboard we want to import is called <ui-path>Node Exporter Full</ui-path>.
+                    El panel que queremos importar se llama <ui-path>Node Exporter Full</ui-path>.
                 </p>
             </step>
 
             <step>
                 <p>
-                    Open the dashboard and click the <ui-path>Copy ID to Clipboard</ui-path> button.
+                    Abre el panel y haz clic en el botón <ui-path>Copiar ID al Portapapeles</ui-path>.
                 </p>
             </step>
             <step>
                 <p>
-                    In Grafana, click the <ui-path>+</ui-path> icon in the side menu and select
-                    <ui-path>Import</ui-path>.
+                    En Grafana, haz clic en el icono <ui-path>+</ui-path> en el menú lateral y selecciona
+                    <ui-path>Importar</ui-path>.
                 </p>
             </step>
             <step>
                 <p>
-                    Paste the dashboard ID into the <ui-path>Import via grafana.com</ui-path> field.
+                    Pega el ID del panel en el campo <ui-path>Importar a través de grafana.com</ui-path>.
                 </p>
             </step>
             <step>
                 <p>
-                    Click <ui-path>Load</ui-path>.
+                    Haz clic en <ui-path>Cargar</ui-path>.
                 </p>
             </step>
             <step>
                 <p>
-                    Select the Prometheus data source from the <ui-path>Import to</ui-path> dropdown.
+                    Selecciona la fuente de datos de Prometheus en el menú desplegable <ui-path>Importar a</ui-path>.
                 </p>
             </step>
             <step>
                 <p>
-                    Click <ui-path>Import</ui-path>.
+                    Haz clic en <ui-path>Importar</ui-path>.
                 </p>
             </step>
             <step>
                 <p>
-                    The dashboard is now imported and you can view it by clicking the
-                    <ui-path>Home</ui-path> icon in the side menu.
+                    El panel está ahora importado y puedes verlo haciendo clic en el
+                    icono <ui-path>Inicio</ui-path> en el menú lateral.
                 </p>
             </step>
         </procedure>
     </chapter>
 
-    <chapter title="Editing a dashboard" id="edit-dashboard">
+    <chapter title="Editar un Panel" id="edit-dashboard">
         <p>
-            Now that we have imported a dashboard, we can customize it to suit our needs.
-            We'll start by changing the title.
+            Ahora que hemos importado un panel, podemos personalizarlo para que se adapte a nuestras necesidades.
+            Empezaremos cambiando el título.
         </p>
         <procedure>
             <step>
                 <p>
-                    Click the <ui-path>Settings</ui-path> icon in the top menu.
+                    Haz clic en el icono <ui-path>Configuración</ui-path> en el menú superior.
                 </p>
             </step>
             <step>
                 <p>
-                    Change the title to <ui-path>Custom Node Exporter</ui-path>.
+                    Cambia el título a <ui-path>Node Exporter Personalizado</ui-path>.
                 </p>
             </step>
             <step>
                 <p>
-                    Click <ui-path>Save</ui-path>.
+                    Haz clic en <ui-path>Guardar</ui-path>.
                 </p>
             </step>
         </procedure>
 
         <p>
-            Next, we'll edit panel on the dashboard. We can see that every panel has three
-            dots in the top right corner. Clicking these dots opens a menu with options
-            for editing the panel.
+            A continuación, editaremos el panel en el panel de control. Podemos ver que cada panel tiene tres
+            puntos en la esquina superior derecha. Al hacer clic en estos puntos se abre un menú con opciones
+            para editar el panel.
         </p>
         <procedure>
             <step>
                 <p>
-                    Click the three dots in the top right corner of the <ui-path>RAM Used</ui-path>
-                    panel.
+                    Haz clic en los tres puntos en la esquina superior derecha del panel <ui-path>RAM Utilizada</ui-path>.
                 </p>
             </step>
             <step>
                 <p>
-                    Select <ui-path>Edit</ui-path>.
+                    Selecciona <ui-path>Editar</ui-path>.
                 </p>
                 <note>
                     <p>
-                    The <ui-path>Edit</ui-path> option is very complex and allows you to
-                    customize every aspect of the panel. We'll only cover a few of the
-                    options here. Dont worry if you don't understand everything at this
-                    point.
+                        La opción <ui-path>Editar</ui-path> es muy compleja y te permite
+                        personalizar cada aspecto del panel. Solo cubriremos algunas de las
+                        opciones aquí. No te preocupes si no entiendes todo en este
+                        punto.
                     </p>
                 </note>
             </step>
             <step>
                 <p>
-                    In the top right section of the page, observe how the panel is a Gauge.
-                    If you click the <ui-path>Gauge</ui-path> dropdown, you can see that there
-                    are many other types of panels available. We will change the panel to a
-                    Stat. Some options are only suitable for certain panel types.
+                    En la sección superior derecha de la página, observa cómo el panel es un Medidor.
+                    Si haces clic en el menú desplegable <ui-path>Medidor</ui-path>, verás que hay
+                    muchos otros tipos de paneles disponibles. Cambiaremos el panel a un
+                    Estadística. Algunas opciones son solo adecuadas para ciertos tipos de paneles.
                 </p>
             </step>
             <step>
                 <p>
-                    In the bottom left section of the page, observe how the panel data is
-                    gathered from the <ui-path>prometheus</ui-path> data source using a PromQL
-                    query. We don't need to change this for the moment.
+                    En la sección inferior izquierda de la página, observa cómo se recopilan los datos del panel
+                    desde la fuente de datos <ui-path>prometheus</ui-path> mediante una consulta PromQL.
+                    No necesitamos cambiar esto por el momento.
                 </p>
             </step>
             <step>
                 <p>
-                    In the bottom right section of the page, observe the different configuration
-                    options for the panel. We will change the <ui-path>Unit</ui-path> to
-                    <ui-path>Number</ui-path>, this way we can see the data returned by the
-                    query without any formatting.
+                    En la sección inferior derecha de la página, observa las diferentes opciones de configuración
+                    para el panel. Cambiaremos la <ui-path>Unidad</ui-path> a
+                    <ui-path>Número</ui-path>, de esta manera podemos ver los datos devueltos por la
+                    consulta sin ningún formato.
                 </p>
                 <tip>
                     <p>
-                        Formatting is useful for displaying data in a human-readable way, but
-                        it can also hide important details. It's a good idea to check the raw
-                        data from time to time.
+                        El formato es útil para mostrar datos de una manera legible para los humanos, pero
+                        también puede ocultar detalles importantes. Es una buena idea verificar los datos
+                        en bruto de vez en cuando.
                     </p>
                 </tip>
                 <p>
-                    The <ui-path>Thresholds</ui-path> option controls how the panel is colored.
-                    We can change the numeric thresholds to change the colors as we want.
+                    La opción <ui-path>Umbral</ui-path> controla cómo se colorea el panel.
+                    Podemos cambiar los umbrales numéricos para cambiar los colores como queramos.
                 </p>
                 <note>
                     <p>
-                        Typically, green is used for good values, yellow for warning values,
-                        and red for critical values. I like to use purple for values that are
-                        better than good, but that's just personal preference.
+                        Típicamente, se usa verde para valores buenos, amarillo para valores de advertencia,
+                        y rojo para valores críticos. Me gusta usar morado para valores que son
+                        mejores que buenos, pero eso es solo preferencia personal.
                     </p>
                 </note>
             </step>
             <step>
                 <p>
-                    Click <ui-path>Apply</ui-path> to see the changes.
+                    Haz clic en <ui-path>Aplicar</ui-path> para ver los cambios.
                 </p>
             </step>
             <step>
                 <p>
-                    By now we should have a good idea of how to edit panels. Feel free to
-                    experiment with the other options.
+                    A estas alturas, deberíamos tener una buena idea de cómo editar paneles. Siéntete libre de
+                    experimentar con las otras opciones.
                 </p>
             </step>
             <step>
                 <p>
-                    Click <ui-path>Save</ui-path> to save the changes.
+                    Haz clic en <ui-path>Guardar</ui-path> para guardar los cambios.
                 </p>
                 <warning>
                     <p>
-                        Remember to do so!
+                        ¡Recuerda hacerlo!
                     </p>
                 </warning>
             </step>
         </procedure>
     </chapter>
 
-    <chapter title="What you've learned" id="what-learned">
-        <p>At this point, you should have a good understanding of how to import and edit
-        dashboards. You should also have a good idea of how to customize panels.</p>
-        <p> We can now move on to the next section.</p>
+    <chapter title="Lo que has aprendido" id="what-learned">
+        <p>En este punto, deberías tener una buena comprensión de cómo importar y editar
+            paneles. También deberías tener una buena idea de cómo personalizar paneles.</p>
+        <p> Ahora podemos pasar a la siguiente sección.</p>
     </chapter>
 
     <seealso>
         <category ref="external">
-        <a href="https://grafana.com/docs/grafana/latest/dashboards/export-import/#importing-a-dashboard">
-            Importing a dashboard
-        </a>
-        <a href="https://grafana.com/docs/grafana/latest/dashboards/build-dashboards/best-practices/">
-            Best practices for dashboards
-        </a>
-        <a href="https://grafana.com/docs/grafana/latest/datasources/prometheus/query-editor/">
-            PromQL query editor
-        </a>
+            <a href="https://grafana.com/docs/grafana/latest/dashboards/export-import/#importing-a-dashboard">
+                Importar un panel
+            </a>
+            <a href="https://grafana.com/docs/grafana/latest/dashboards/build-dashboards/best-practices/">
+                Mejores prácticas para paneles
+            </a>
+            <a href="https://grafana.com/docs/grafana/latest/datasources/prometheus/query-editor/">
+                Editor de consultas PromQL
+            </a>
         </category>
     </seealso>
 </topic>

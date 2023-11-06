@@ -3,56 +3,56 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="Now we&apos;ll have a Cluster" id="Now-we-ll-have-a-Cluster">
+       title="Ahora tendremos un clúster" id="Now-we-ll-have-a-Cluster">
 
     <p>
-        Up until now, we have been working with a single node. In this tutorial, we will create
-        a cluster of nodes. Using a single node can be useful for testing and development purposes,
-        but we want to understand how these tools can be used in a production environment.
+        Hasta ahora, hemos estado trabajando con un solo nodo. En este tutorial, crearemos
+        un clúster de nodos. Utilizar un solo nodo puede ser útil con fines de prueba y desarrollo,
+        pero queremos comprender cómo estas herramientas pueden ser utilizadas en un entorno de producción.
     </p>
 
-    <chapter title="Observer Observee architecure" id="architecure">
+    <chapter title="Arquitectura Observador-Observado" id="architecure">
         <p>
-            We will then have two types of hosts:
+            Tendremos dos tipos de hosts:
         </p>
 
         <list>
-            <li>1 Oberver</li>
-            <li>X Observees</li>
+            <li>1 Observador</li>
+            <li>X Observados</li>
         </list>
 
         <p>
-            This architecture will allow us to observe multiple hosts from a single Grafana instance.
-            Also, we would not want to install Grafana, Loki and Prometheus on every host we want to monitor.
-            Installing these tools on every host would be a waste of resources and would add a lot of
-            overhead and complexity to our infrastructure.
+            Esta arquitectura nos permitirá observar varios hosts desde una sola instancia de Grafana.
+            Además, no querríamos instalar Grafana, Loki y Prometheus en cada host que queremos observar.
+            Instalar estas herramientas en cada host sería un desperdicio de recursos y agregaría mucha
+            carga y complejidad a nuestra infraestructura.
         </p>
 
-        <img src="Cluster.png" alt="Cluster architecture"/>
+        <img src="Cluster.png" alt="Arquitectura del clúster"/>
     </chapter>
 
-    <chapter title="On the Observer host" id="observer-setup">
+    <chapter title="En el host Observador" id="observer-setup">
 
         <p>
-            The observer host will be the one that will host Grafana, Loki and Prometheus.
+            El host observador será el que albergará Grafana, Loki y Prometheus.
         </p>
 
         <p>
-            Prometheus is a scraper, that means it will be responsible to scrape metrics from
-            the observees. Therefore, we need to configure it to know where to find the observees.
+            Prometheus es un scraper, lo que significa que será responsable de recopilar métricas de
+            los observados. Por lo tanto, necesitamos configurarlo para que sepa dónde encontrar a los observados.
         </p>
         <procedure>
             <step>
                 <p>
-                    Open the <code>lab-grafana/resources/prometheus.yml</code> file in your favorite editor.
+                    Abre el archivo <code>lab-grafana/resources/prometheus.yml</code> en tu editor favorito.
                 </p>
                 <tip>
-                    If you are using the terminal, you can use the <code>nano</code> editor instead of <code>vim</code>.
+                    Si estás usando la terminal, puedes usar el editor <code>nano</code> en lugar de <code>vim</code>.
                 </tip>
             </step>
             <step>
                 <p>
-                    We will be editing the <code>scrape_configs</code> section of the file:
+                    Editaremos la sección <code>scrape_configs</code> del archivo:
                 </p>
                 <code-block lang="yaml">
                     - job_name: "node_exporter"
@@ -65,32 +65,32 @@
                 </code-block>
             </step>
             <step>
-            <p>
-                As every of our observees will be running a <code>node-exporter</code> and a <code>cadvisor</code>,
-                we will need to add them to the list of targets:
-            </p>
-            <code-block lang="yaml">
-                - job_name: "node_exporter"
-                static_configs:
-                - targets: ["node-exporter:9100", "observee1:9100", "observee2:9100", "observeeX:9100"]
-
-                - job_name: "cadvisor"
-                static_configs:
-                - targets: ["cadvisor:8080", "observee1:8080", "observee2:8080", "observeeX:8080"]
-            </code-block>
-            <p>
-                Replace <code>observee1</code>, <code>observee2</code> and <code>observeeX</code> with the
-                IP adresses of your observees.
-            </p>
-            </step>
-            <step>
                 <p>
-                    Save the file and exit your editor.
+                    Como cada uno de nuestros observados ejecutará un <code>node-exporter</code> y un <code>cadvisor</code>,
+                    necesitaremos agregarlos a la lista de destinos:
+                </p>
+                <code-block lang="yaml">
+                    - job_name: "node_exporter"
+                    static_configs:
+                    - targets: ["node-exporter:9100", "observado1:9100", "observado2:9100", "observadoX:9100"]
+
+                    - job_name: "cadvisor"
+                    static_configs:
+                    - targets: ["cadvisor:8080", "observado1:8080", "observado2:8080", "observadoX:8080"]
+                </code-block>
+                <p>
+                    Reemplaza <code>observado1</code>, <code>observado2</code> y <code>observadoX</code> con las
+                    direcciones IP de tus observados.
                 </p>
             </step>
             <step>
                 <p>
-                    Restart the Prometheus container:
+                    Guarda el archivo y sal de tu editor.
+                </p>
+            </step>
+            <step>
+                <p>
+                    Reinicia el contenedor de Prometheus:
                 </p>
                 <code-block lang="bash">
                     docker restart prometheus
@@ -98,42 +98,42 @@
             </step>
             <step>
                 <p>
-                    Open the Prometheus web interface at <code>http://localhost:9090</code>.
+                    Abre la interfaz web de Prometheus en <code>http://localhost:9090</code>.
                 </p>
                 <p>
-                    You should see the <code>node_exporter</code> and <code>cadvisor</code>
-                    targets in the <code>Targets</code> page.
-                    If you don't see them, wait a few seconds and refresh the page, scraping
-                    might take a few seconds.
+                    Deberías ver los targets de <code>node_exporter</code> y <code>cadvisor</code>
+                    en la página de <code>Targets</code>.
+                    Si no los ves, espera unos segundos y actualiza la página, el scraping
+                    puede tardar unos segundos.
                 </p>
             </step>
         </procedure>
     </chapter>
 
-    <chapter title="On the Observee hosts" id="observee-setup">
+    <chapter title="En los hosts Observados" id="observee-setup">
         <p>
-            The observee hosts will be the ones that will be monitored by the observer.
-            They will be running <code>node-exporter</code>, <code>cadvisor</code>
-            and <code>promtail</code> services.
+            Los hosts observados serán los que serán monitoreados por el observador.
+            Ejecutarán los servicios <code>node-exporter</code>, <code>cadvisor</code>
+            y <code>promtail</code>.
         </p>
 
         <p>
-            We will need to configure <code>promtail</code> to send logs to the observer
-            as <code>promtail</code> is the agent that will be responsible to send logs
-            to Loki.
+            Necesitaremos configurar <code>promtail</code> para enviar registros al observador,
+            ya que <code>promtail</code> es el agente que se encargará de enviar registros
+            a Loki.
         </p>
         <procedure>
             <step>
                 <p>
-                    Open the <code>lab-grafana/resources/promtail.yml</code> file in your favorite editor.
+                    Abre el archivo <code>lab-grafana/resources/promtail.yml</code> en tu editor favorito.
                 </p>
                 <tip>
-                    If you are using the terminal, you can use the <code>nano</code> editor instead of <code>vim</code>.
+                    Si estás usando la terminal, puedes usar el editor <code>nano</code> en lugar de <code>vim</code>.
                 </tip>
             </step>
             <step>
                 <p>
-                    We will be editing the <code>clients</code> section of the file:
+                    Editaremos la sección <code>clients</code> del archivo:
                 </p>
                 <code-block lang="yaml">
                     clients:
@@ -142,17 +142,17 @@
             </step>
             <step>
                 <p>
-                    Replace <code>localhost</code> with the IP address of your observer.
+                    Reemplaza <code>localhost</code> con la dirección IP de tu observador.
                 </p>
             </step>
             <step>
                 <p>
-                    Save the file and exit your editor.
+                    Guarda el archivo y sal de tu editor.
                 </p>
             </step>
             <step>
                 <p>
-                    Restart the <code>promtail</code> container:
+                    Reinicia el contenedor de <code>promtail</code>:
                 </p>
                 <code-block lang="bash">
                     docker restart promtail
@@ -160,8 +160,8 @@
             </step>
             <step>
                 <p>
-                    As an Observee, we will no longer need Grafana, Loki, Prometheus and Blackbox services up.
-                    We will stop them:
+                    Como observado, ya no necesitaremos los servicios de Grafana, Loki, Prometheus y Blackbox.
+                    Los detendremos:
                 </p>
                 <code-block lang="bash">
                     docker stop grafana loki prometheus blackbox
@@ -169,22 +169,22 @@
             </step>
             <step>
                 <p>
-                    We would now be ready to deploy our application on the observee hosts.
+                    Ahora estaríamos listos para desplegar nuestra aplicación en los hosts observados.
                 </p>
             </step>
         </procedure>
     </chapter>
 
-    <chapter title="What you've learned" id="what-learned">
+    <chapter title="Lo que has aprendido" id="what-learned">
         <p>
-            At this point, you should understand how a cluster of nodes can be observed by a single
-            Grafana instance. This is the architecture that is commonly used in production environments.
+            Llegados a este punto, deberías entender cómo un clúster de nodos puede ser observado por una sola
+            instancia de Grafana. Esta es la arquitectura que se utiliza comúnmente en entornos de producción.
         </p>
     </chapter>
 
     <seealso>
         <category ref="external">
-                
+
         </category>
     </seealso>
 </topic>

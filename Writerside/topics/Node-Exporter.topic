@@ -9,39 +9,38 @@
         Node-Exporter
     </title>
     <p>
-        Node Exporter is an agent that collects metrics about the host machine and
-        sends them to Prometheus.
+        Node Exporter es un servicio que recopila métricas sobre la máquina anfitriona y
+        las envía a Prometheus.
     </p>
     <p>
-        We can access the metrics collected by Node Exporter by going to
-        <a href="http://localhost:9100/metrics">http://localhost:9100/metrics</a> in our
-        browser.
+        Podemos acceder a las métricas recopiladas por Node Exporter yendo a
+        <a href="http://localhost:9100/metrics">http://localhost:9100/metrics</a> en nuestro
+        navegador.
     </p>
     <p>
-        Node exporter exports a lot of metrics, some of them are easily understandable
-        and some of them are not. Even if we don't understand all the metrics, they can
-        still be useful to us.
+        Node Exporter exporta muchas métricas, algunas son fácilmente comprensibles
+        y otras no. Incluso si no entendemos todas las métricas, aún pueden ser útiles para nosotros.
     </p>
     <p>
-        Let's try to search for the number of allocated file descriptors in the metrics.
+        Intentemos buscar el número de descriptores de archivo asignados en las métricas.
     </p>
     <code-block lang="bash">
         curl -s http://localhost:9100/metrics | grep node_filefd_allocated
     </code-block>
     <p>
-        The metric is not only composed of a name and a value, it also has labels that
-        give us more information about the metric:
+        La métrica no solo está compuesta por un nombre y un valor, también tiene etiquetas que
+        nos dan más información sobre la métrica:
     </p>
     <list>
         <li>
             <p>
-                The <code>help</code> label that gives us a description of the metric.
+                La etiqueta <code>help</code> que nos proporciona una descripción de la métrica.
             </p>
         </li>
         <li>
             <p>
-                The <code>type</code> label that tells us that the metric is a <code>gauge</code>.
-                A gauge is a metric that can go up and down over time.
+                La etiqueta <code>type</code> que nos indica que la métrica es un <code>gauge</code>.
+                Un gauge es una métrica que puede subir y bajar con el tiempo.
             </p>
         </li>
     </list>

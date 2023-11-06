@@ -9,31 +9,31 @@
         PromQL
     </title>
     <p>
-        PromQL is the query language used to query Prometheus. It is a functional
-        language that allows us to select and aggregate metrics.
+        PromQL es el lenguaje de consulta utilizado para consultar Prometheus. Es un lenguaje funcional
+        que nos permite seleccionar y agregar métricas.
     </p>
-    <chapter title="Basic Queries" id="basic-queries">
-        <chapter title="Selecting a metric" id="selecting-a-metric">
+    <chapter title="Consultas Básicas" id="basic-queries">
+        <chapter title="Seleccionar una métrica" id="selecting-a-metric">
             <p>
-                To select a metric, we can use its name. For example, to select the <code>node_filefd_allocated</code>
-                metric, we can use the following query:
+                Para seleccionar una métrica, podemos usar su nombre. Por ejemplo, para seleccionar la métrica
+                <code>node_filefd_allocated</code>, podemos usar la siguiente consulta:
             </p>
 
             <code-block lang="promql">
                 node_filefd_allocated
             </code-block>
         </chapter>
-        <chapter title="Filtering by label" id="filtering-by-label">
+        <chapter title="Filtrar por etiqueta" id="filtering-by-label">
             <p>
-                To filter a metric by label, we can use curly braces (<code>{}</code>) to specify the label
+                Para filtrar una métrica por etiqueta, podemos usar llaves (<code>{}</code>) para especificar la etiqueta.
             </p>
             <p>
-                For example, to select the <code>node_filefd_allocated</code> metric with the <code>job</code>
-                label set to <code>node_exporter</code>:
+                Por ejemplo, para seleccionar la métrica <code>node_filefd_allocated</code> con la etiqueta <code>job</code>
+                establecida en <code>node_exporter</code>:
             </p>
 
             <code-block lang="promql">
-                node_filefd_allocated{job=&quot;node_exporter&quot;}
+                node_filefd_allocated{job="node_exporter"}
             </code-block>
         </chapter>
     </chapter>

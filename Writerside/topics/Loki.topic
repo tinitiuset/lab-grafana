@@ -9,16 +9,16 @@
         Loki
     </title>
     <p>
-        Loki is a logs database and a logs collection and aggregation engine. It is
-        designed to be used as a companion to Prometheus.
+        Loki es una base de datos de registros y un motor de colección y agregación de logs. Está
+        diseñado para ser utilizado como un complemento de Prometheus.
     </p>
     <p>
-        For Loki to be able to collect logs, we need to configure our applications to
-        send their logs to Loki. We will use Promtail to do so.
+        Para que Loki pueda recopilar logs, necesitamos configurar nuestras aplicaciones para
+        enviar sus registros a Loki. Utilizaremos Promtail para hacerlo.
     </p>
     <p>
-        We can query Loki using PromQL. We can also use Grafana to visualize the logs
-        collected by Loki.
+        Podemos consultar Loki usando PromQL. También podemos usar Grafana para visualizar los registros
+        recopilados por Loki.
     </p>
 
 </topic>

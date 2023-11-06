@@ -1,26 +1,27 @@
-# DevOps and Observability
+# DevOps y Observabilidad
 
-DevOps is a culture that promotes collaboration between development and operations teams
-to deploy code to production faster in an automated and repeatable way. The idea is to
-build a culture of shared responsibility for the release of software features and
-updates. This culture shift shortens the development cycle, increases deployment
-frequency, and helps to deliver more dependable software releases.
+El DevOps es una cultura que fomenta la colaboración entre equipos de desarrollo y operaciones
+para desplegar código en producción de forma rápida, automatizada y repetible. La idea es
+construir una cultura de responsabilidad compartida para el lanzamiento de características
+y actualizaciones de software. Este cambio cultural acorta el ciclo de desarrollo, aumenta
+la frecuencia de despliegue y ayuda a ofrecer lanzamientos de software más confiables.
 
-Microservices and containers are often used in DevOps environments. Microservices are
-small, independent services that work together. Containers are a way to package software
-so that it can run consistently across computing environments. Microservices and
-containers are often used together because containers are a good way to deploy
-microservices.
+Los microservicios y contenedores se utilizan frecuentemente en entornos DevOps. Los 
+microservicios son servicios pequeños e independientes que trabajan con otros microservicios.
+Los contenedores son una forma de empaquetar software para que pueda ejecutarse de manera 
+consistente en diferentes entornos informáticos. A menudo, se utilizan microservicios y 
+contenedores juntos porque los contenedores son una buena herramienta para desplegar
+microservicios.
 
-Distribution of these microservices across multiple containers and hosts makes it
-difficult to understand the state of the system. This is where observability comes in.
-Observability is the extent to which you can understand the internal state or condition
-of a complex system based only on knowledge of its external outputs. The more observable
-a system, the more quickly and accurately you can navigate from an identified performance
-problem to its root cause, without additional testing or coding.
+La distribución de estos microservicios en múltiples contenedores y hosts dificulta la
+comprensión del estado del sistema. Aquí es donde entra la observabilidad. La observabilidad
+es la medida en que puedes entender el estado interno o la condición de un sistema complejo
+basándote únicamente en el conocimiento de sus salidas externas. Cuanto más observable sea
+un sistema, más rápido y preciso será el proceso desde un problema de rendimiento 
+identificado hasta su causa raíz, sin necesidad de pruebas o codificación adicionales.
 
-Observability in its current form is a relatively new concept. It is an evolution of
-monitoring, which is the process of collecting and analyzing data about a system. The
-goal of monitoring is to ensure that the system is operating as expected. Observability
-is a more proactive approach that allows you to understand the state of the system and
-identify problems before they occur.
+La observabilidad en su forma actual es un concepto relativamente nuevo. Es una evolución de
+la monitorización, que es el proceso de recopilar y analizar datos sobre un sistema. El 
+objetivo de la monitorización es asegurarse de que el sistema esté funcionando según lo esperado.
+La observabilidad es un enfoque más proactivo que te permite entender el estado del sistema e 
+identificar problemas antes de que ocurran.

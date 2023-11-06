@@ -3,49 +3,49 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="Load testing our Cluster" id="Load-testing-our-Cluster">
+       title="Pruebas de carga en nuestro clúster" id="Load-testing-our-Cluster">
 
     <warning>
         <p>
             <control>
-                This part is experimental and has not been fully tested.
+                Esta parte es experimental y no ha sido completamente probada.
             </control>
         </p>
         <p>
-            Proceed with caution.
+            Procede con precaución.
         </p>
     </warning>
     <warning>
         <p>
             <control>
-                Only Observees should be load tested.
+                Solo los Observados deben someterse a pruebas de carga.
             </control>
         </p>
         <p>
-            Load testing the Observer might cause the Observer to crash and leave us with no data.
+            Las pruebas de carga en el Observador podrían hacer que este se bloquee y nos deje sin datos.
         </p>
     </warning>
     <p>
-        So far, we've got a working observable cluster. Now we want to see how it behaves under load.
-        The idea is to simulate large workloads and see how the effects can be observed in Grafana.
+        Hasta ahora, tenemos un clúster observable que funciona. Ahora queremos ver cómo se comporta bajo carga.
+        La idea es simular cargas de trabajo grandes y observar los efectos en Grafana.
     </p>
     <warning>
         <p>
             <control>
-                It might be a good idea to save the state of our Virtual Machines before we start.
+                Podría ser una buena idea guardar el estado de nuestras máquinas virtuales antes de comenzar.
             </control>
         </p>
     </warning>
 
-    <chapter title="Everyone wants dinner" id="everyone-dinner">
+    <chapter title="Todos quieren cenar" id="everyone-dinner">
         <p>
-            Feeling like a chef? Let's cook up some load.
+            ¿Te sientes como un chef? Vamos a cocinar algo de carga.
         </p>
 
         <procedure>
             <step>
                 <p>
-                    Make sure <code>philo</code> docker image exists.
+                    Asegúrate de que la imagen de docker <code>philo</code> exista.
                 </p>
                 <code-block lang="bash">
                     docker images
@@ -53,7 +53,7 @@
             </step>
             <step>
                 <p>
-                    Run the <code>philo</code> image 20 times.
+                    Ejecuta la imagen <code>philo</code> 20 veces.
                 </p>
                 <code-block lang="bash">
                     for i in {1..20}
@@ -63,10 +63,10 @@
                 </code-block>
                 <note>
                     <control>
-                        Remember to stop the containers when you're done.
+                        Recuerda detener los contenedores cuando hayas terminado.
                     </control>
                     <p>
-                        (If the host doesn't crash)
+                        (Si el host no se bloquea)
                     </p>
                     <code-block lang="bash">
                         for i in {1..20}
@@ -78,20 +78,20 @@
             </step>
             <step>
                 <p>
-                    20 Philosophers instances might not be enough.
-                    Consider adding more if you feel like it.
+                    20 instancias de Philosophers pueden no ser suficientes.
+                    Considera agregar más si así lo deseas.
                 </p>
             </step>
         </procedure>
     </chapter>
-    <chapter title="Using a dedicated tool" id="decicated-tool">
+    <chapter title="Usando una herramienta dedicada" id="decicated-tool">
         <p>
-            Stress is a tool that can be used to simulate load.
+            Stress es una herramienta que se puede utilizar para simular carga.
         </p>
         <warning>
             <p>
                 <control>
-                    This might crash the host.
+                    Esto podría bloquear el host.
                 </control>
             </p>
         </warning>
@@ -99,7 +99,7 @@
         <procedure>
             <step>
                 <p>
-                    Install <code>stress</code>.
+                    Instala <code>stress</code>.
                 </p>
                 <code-block lang="bash">
                     sudo apt install stress
@@ -107,7 +107,7 @@
             </step>
             <step>
                 <p>
-                    Run <code>stress</code>.
+                    Ejecuta <code>stress</code>.
                 </p>
                 <code-block lang="bash">
                     stress --cpu 4 --io 3 --vm 2 --vm-bytes 128M --timeout 10s
@@ -115,13 +115,13 @@
             </step>
         </procedure>
     </chapter>
-    <chapter title="We've run out of disk space" id="disk-space">
+    <chapter title="Nos hemos quedado sin espacio en disco" id="disk-space">
         <p>
-            Do you want to see what happens when we run out of disk space?
+            ¿Quieres ver qué sucede cuando nos quedamos sin espacio en disco?
         </p>
 
         <p>
-            Here are some ideas:
+            Aquí tienes algunas ideas:
         </p>
 
         <code-block lang="bash">
@@ -136,7 +136,7 @@
     </chapter>
     <seealso>
         <category ref="external">
-            <a href="https://wiki.archlinux.org/title/Stress_testing">Stress testing on Linux</a>
+            <a href="https://wiki.archlinux.org/title/Stress_testing">Pruebas de estrés en Linux</a>
         </category>
     </seealso>
 </topic>

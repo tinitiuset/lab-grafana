@@ -3,34 +3,34 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="Deploying our first Application" id="Deploying-our-first-Application">
+       title="Implementando nuestra primera aplicación" id="Deploying-our-first-Application">
 
     <p>
-        This articles sole purpose is to deploy a sample application, so we can generate data
-        for our observability tools.
+        El objetivo de este artículo es implementar una aplicación de muestra para que podamos generar datos
+        para nuestras herramientas de observabilidad.
     </p>
     <note>
         <p>
-            This article will be based around the 42 Philosophers project, which is a project
-            that simulates the dining philosophers problem.
+            Este artículo se basará en el proyecto 42 Philosophers, que es un proyecto
+            que simula el problema de los filósofos cenando.
         </p>
     </note>
 
-    <chapter title="Containerizing Philosophers" id="containerizing-philosophers">
+    <chapter title="Contenerizando Philosophers" id="containerizing-philosophers">
         <p>
-            We will be using Docker to containerize our application, so we can deploy multiple instances
-            of it simply.
+            Utilizaremos Docker para contenerizar nuestra aplicación, de modo que podamos desplegar múltiples instancias
+            de ella de manera sencilla.
         </p>
         <procedure>
             <step>
                 <p>
-                    First, we need to create a Dockerfile, which will be used to build our image.
+                    Primero, necesitamos crear un Dockerfile, que se utilizará para construir nuestra imagen.
                 </p>
                 <p>
-                    Create a file named <code>Dockerfile</code> in the <code>lab-grafana/utilities/philo</code> directory.
+                    Crea un archivo llamado <code>Dockerfile</code> en el directorio <code>lab-grafana/utilities/philo</code>.
                 </p>
                 <p>
-                    Add the following content to the file:
+                    Agrega el siguiente contenido al archivo:
                 </p>
                 <code-block lang="docker">
                     FROM ubuntu:latest
@@ -60,10 +60,10 @@
             </step>
             <step>
                 <p>
-                    Now we need to build our image.
+                    Ahora necesitamos construir nuestra imagen.
                 </p>
                 <p>
-                    Run the following command in <code>lab-grafana/utilities/philo</code>:
+                    Ejecuta el siguiente comando en <code>lab-grafana/utilities/philo</code>:
                 </p>
                 <code-block lang="bash">
                     docker build -t philo .
@@ -71,29 +71,29 @@
             </step>
             <step>
                 <p>
-                    Now we need to run our container.
+                    Ahora necesitamos ejecutar nuestro contenedor.
                 </p>
                 <p>
-                    Run the following command in <code>lab-grafana/utilities/philo</code>:
+                    Ejecuta el siguiente comando en <code>lab-grafana/utilities/philo</code>:
                 </p>
                 <code-block lang="bash">
                     docker run --rm -it -e PHILO_ARGS="5 800 200 200" philo
                 </code-block>
                 <tip>
                     <p>
-                        You can change PHILO_ARGS to change the number of philosophers,
-                        the time they eat, sleep and think. Give it a try!
+                        Puedes cambiar PHILO_ARGS para cambiar el número de filósofos,
+                        el tiempo que comen, duermen y piensan. ¡Inténtalo!
                     </p>
                 </tip>
             </step>
             <step>
                 <p>
-                    A docker-compose file is also provided in <code>lab-grafana/utilities/philo</code>,
-                    which can be used to run multiple instances of the application. Logs will be written
-                    to <code>lab-grafana/data/philo/</code> so Promtail can scrape them.
+                    También se proporciona un archivo docker-compose en <code>lab-grafana/utilities/philo</code>,
+                    que se puede utilizar para ejecutar múltiples instancias de la aplicación. Los logs se escribirán
+                    en <code>lab-grafana/data/philo/</code> para que Promtail pueda recopilarlos.
                 </p>
                 <p>
-                    Run the following command in <code>lab-grafana/utilities/philo</code>:
+                    Ejecuta el siguiente comando en <code>lab-grafana/utilities/philo</code>:
                 </p>
                 <code-block lang="bash">
                     docker-compose up
@@ -102,13 +102,13 @@
             </step>
         </procedure>
     </chapter>
-    <chapter title="What you've learned" id="what-learned">
+    <chapter title="Lo que has aprendido" id="what-learned">
         <p>
-            You've learned how to containerize Philosophers, and how to run multiple instances of it.
+            Has aprendido cómo contenerizar Philosophers y cómo ejecutar múltiples instancias de él.
         </p>
     </chapter>
 
     <seealso>
-        <!--Give some related links to how-to articles-->
+        <!--Proporciona algunos enlaces relacionados a artículos de cómo hacer-->
     </seealso>
 </topic>

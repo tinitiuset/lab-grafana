@@ -3,83 +3,80 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
-       title="Observability Stack Components" id="Observability-Stack-Components">
+       title="Componentes del Stack de Observabilidad" id="Observability-Stack-Components">
 
     <p>
-        An observability stack is a set of tools that are used to monitor and
-        understand a system infrastructure. They can be spread across multiple
-        machines and are usually deployed as
-        <a href="https://www.ibm.com/topics/containers">containers</a>. The tools
-        in the stack are used to collect data about the system and to visualize
-        the data in a way that makes it easy to understand the behavior of the
-        system infrastructure.
+        Un stack de observabilidad es un conjunto de herramientas que se utilizan para monitorizar
+        y entender la infraestructura de un sistema. Pueden distribuirse en varias máquinas y
+        generalmente se despliegan como
+        <a href="https://www.ibm.com/topics/containers">contenedores</a>. Las herramientas
+        en el stack se utilizan para recopilar datos sobre el sistema y visualizar los datos de
+        una manera que facilita la comprensión del comportamiento de la infraestructura del sistema.
     </p>
 
-    <chapter title="Pillars" id="pillars">
-        <p>The three pillars of an observability stack are:</p>
+    <chapter title="Pilares" id="pillars">
+        <p>Los tres pilares de un stack de observabilidad son:</p>
         <deflist>
-            <def title="Metrics">
-                A metric is a measurement of a system's state. Metrics are usually
-                collected at regular intervals and are used to understand the behavior of the
-                system over time.
+            <def title="Métricas">
+                Una métrica es una medida del estado de un sistema. Las métricas generalmente se
+                recopilan a intervalos regulares y se utilizan para entender el comportamiento del
+                sistema a lo largo del tiempo.
             </def>
             <def title="Logs">
-                Logs are records of events that happened in a system. Logs are usually
-                used to understand the behavior of the system at a specific point in time.
+                Los logs son registros de eventos que ocurrieron en un sistema. Los logs generalmente
+                se utilizan para entender el comportamiento del sistema en un momento específico.
             </def>
             <def title="Traces">
-                Traces are records of the path of a request through a system. Traces
-                are usually used to understand the behavior of the system when handling a
-                request.
+                Las trazas son registros del camino de una solicitud a través de un sistema. Las trazas
+                generalmente se utilizan para entender el comportamiento del sistema al manejar una solicitud.
             </def>
         </deflist>
     </chapter>
-    <chapter title="Tools" id="tools">
-        <p>The tools that make up our observability stack are:</p>
+    <chapter title="Herramientas" id="tools">
+        <p>Las herramientas que van a componer nuestro stack de observabilidad son:</p>
         <deflist>
             <def title="Grafana">
                 <p>
-                    <a href="https://grafana.com/">Grafana</a> is an open source metric
-                    analytics and visualization suite.
-                    It is most commonly used for visualizing time series data for
-                    infrastructure and application analytics.
+                    <a href="https://grafana.com/">Grafana</a> es una suite de análisis y visualización de métricas de código
+                    abierto.
+                    Se utiliza comúnmente para visualizar datos de series temporales para
+                    análisis de infraestructura y aplicaciones.
                 </p>
             </def>
             <def title="Prometheus" >
                 <p>
-                    <a href="https://prometheus.io/">Prometheus</a> is an open-source
-                    systems monitoring and alerting toolkit.
+                    <a href="https://prometheus.io/">Prometheus</a> es un conjunto de herramientas de
+                    monitorización y alerta de código abierto.
                 </p>
             </def>
             <def title="Node Exporter">
                 <p>
                     <a href="https://github.com/prometheus/node_exporter">Node Exporter</a>
-                    collects metrics about the host machine and sends them to Prometheus.
+                    recopila métricas sobre la máquina host y las envía a Prometheus.
                 </p>
             </def>
             <def title="Blackbox Exporter">
                 <p>
                     <a href="https://github.com/prometheus/blackbox_exporter">Blackbox Exporter</a>
-                    collects metrics about a target by probing it using HTTP, HTTPS, DNS, TCP, and ICMP.
+                    recopila métricas sobre un objetivo al sondearlo mediante HTTP, HTTPS, DNS, TCP e ICMP.
                 </p>
             </def>
             <def title="cAdvisor">
                 <p>
-                    <a href="https://grafana.com/loki">cAdvisor</a> analyzes resource usage
-                    and performance characteristics of running containers.
+                    <a href="https://grafana.com/loki">cAdvisor</a> analiza el uso de recursos
+                    y las características de rendimiento de los contenedores en ejecución.
                 </p>
             </def>
             <def title="Loki">
                 <p>
-                    <a href="https://grafana.com/loki">Loki</a> is a horizontally-scalable,
-                    highly-available, multi-tenant log aggregation system inspired by Prometheus.
+                    <a href="https://grafana.com/loki">Loki</a> es un sistema de agregación de registros
+                    escalable horizontalmente, altamente disponible y multitenant inspirado en Prometheus.
                 </p>
             </def>
             <def title="Promtail">
                 <p>
                     <a href="https://grafana.com/docs/loki/latest/clients/promtail/">Promtail</a>
-                     ships the contents of local logs to a private Loki instance.
-
+                    envía el contenido de los logs locales a una instancia privada de Loki.
                 </p>
             </def>
         </deflist>
