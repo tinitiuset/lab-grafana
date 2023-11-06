@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Load testing our Cluster" id="Load-testing-our-Cluster">
+
+    <warning>
+        <p>
+            <control>
+                This part is experimental and has not been fully tested.
+            </control>
+        </p>
+        <p>
+            Proceed with caution.
+        </p>
+    </warning>
+    <warning>
+        <p>
+            <control>
+                Only Observees should be load tested.
+            </control>
+        </p>
+        <p>
+            Load testing the Observer might cause the Observer to crash and leave us with no data.
+        </p>
+    </warning>
+    <p>
+        So far, we've got a working observable cluster. Now we want to see how it behaves under load.
+        The idea is to simulate large workloads and see how the effects can be observed in Grafana.
+    </p>
+    <warning>
+        <p>
+            <control>
+                It might be a good idea to save the state of our Virtual Machines before we start.
+            </control>
+        </p>
+    </warning>
+
+    <chapter title="Everyone wants dinner" id="everyone-dinner">
+        <p>
+            Feeling like a chef? Let's cook up some load.
+        </p>
+
+        <procedure>
+            <step>
+                <p>
+                    Make sure <code>philo</code> docker image exists.
+                </p>
+                <code-block lang="bash">
+                    docker images
+                </code-block>
+            </step>
+            <step>
+                <p>
+                    Run the <code>philo</code> image 20 times.
+                </p>
+                <code-block lang="bash">
+                    for i in {1..20}
+                    do
+                    docker run --rm -it -d -e PHILO_ARGS="5 800 200 200" --name $i philo
+                    done
+                </code-block>
+                <note>
+                    <control>
+                        Remember to stop the containers when you're done.
+                    </control>
+                    <p>
+                        (If the host doesn't crash)
+                    </p>
+                    <code-block lang="bash">
+                        for i in {1..20}
+                        do
+                        docker rm -f $i
+                        done
+                    </code-block>
+                </note>
+            </step>
+            <step>
+                <p>
+                    20 Philosophers instances might not be enough.
+                    Consider adding more if you feel like it.
+                </p>
+            </step>
+        </procedure>
+    </chapter>
+    <chapter title="Using a dedicated tool" id="decicated-tool">
+        <p>
+            Stress is a tool that can be used to simulate load.
+        </p>
+        <warning>
+            <p>
+                <control>
+                    This might crash the host.
+                </control>
+            </p>
+        </warning>
+
+        <procedure>
+            <step>
+                <p>
+                    Install <code>stress</code>.
+                </p>
+                <code-block lang="bash">
+                    sudo apt install stress
+                </code-block>
+            </step>
+            <step>
+                <p>
+                    Run <code>stress</code>.
+                </p>
+                <code-block lang="bash">
+                    stress --cpu 4 --io 3 --vm 2 --vm-bytes 128M --timeout 10s
+                </code-block>
+            </step>
+        </procedure>
+    </chapter>
+    <chapter title="We've run out of disk space" id="disk-space">
+        <p>
+            Do you want to see what happens when we run out of disk space?
+        </p>
+
+        <p>
+            Here are some ideas:
+        </p>
+
+        <code-block lang="bash">
+            dd if=/dev/zero of=bigfile bs=1G count=15
+        </code-block>
+        <code-block lang="bash">
+            cat /dev/random > bigfile
+        </code-block>
+        <code-block lang="bash">
+            fallocate -l 15G bigfile
+        </code-block>
+    </chapter>
+    <seealso>
+        <category ref="external">
+            <a href="https://wiki.archlinux.org/title/Stress_testing">Stress testing on Linux</a>
+        </category>
+    </seealso>
+</topic>

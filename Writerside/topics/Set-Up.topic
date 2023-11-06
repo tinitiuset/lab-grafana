@@ -145,6 +145,19 @@
                 Head into the utilities directory on the repository: <code-block lang="bash">cd lab-grafana/utilities</code-block>
             </step>
             <step>
+                <p>
+                    Run:
+                </p>
+                <code-block lang="bash">
+                chmod 777 ../data/*
+                </code-block>
+                <warning>
+                    <p>
+                        Never run <code>chmod 777</code> on a production system.
+                    </p>
+                </warning>
+            </step>
+            <step>
 
                 <p>
                     Wake up the services:

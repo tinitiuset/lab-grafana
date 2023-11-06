@@ -20,4 +20,5 @@
     <toc-element topic="Introduction-to-Grafana-Dashboards.topic"/>
     <toc-element topic="Deploying-our-first-Application.topic"/>
     <toc-element topic="Now-we-ll-have-a-Cluster.topic"/>
+    <toc-element topic="Load-testing-our-Cluster.topic"/>
 </instance-profile>

@@ -101,7 +101,11 @@
 
             </step>
         </procedure>
-
+    </chapter>
+    <chapter title="What you've learned" id="what-learned">
+        <p>
+            You've learned how to containerize Philosophers, and how to run multiple instances of it.
+        </p>
     </chapter>
 
     <seealso>
