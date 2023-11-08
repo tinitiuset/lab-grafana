@@ -96,7 +96,7 @@
                     Run the following command in <code>lab-grafana/utilities/philo</code>:
                 </p>
                 <code-block lang="bash">
-                    docker-compose up
+                    docker compose up
                 </code-block>
 
             </step>

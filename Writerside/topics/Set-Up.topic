@@ -16,7 +16,7 @@
 
     <list>
         <li>Virtual Box</li>
-        <li>The VM image located in <code>/path/to/image</code></li>
+        <li>The VM image located in <code>/sgoinfre/shared</code></li>
         <li>The <a href="https://github.com/tinitiuset/lab-grafana.git">repository</a> containing the code for the Workshop</li>
     </list>
 
@@ -50,6 +50,26 @@
                         good place to start.
                     </p>
                 </tip>
+            </step>
+            <step>
+                <p>
+                    Select the image of the virtual machine that you previously copied.
+                </p>
+            </step>
+            <step>
+                <p>
+                    <ui-path>Machine Base Folder</ui-path> should be <code>/goinfre/$USER</code>
+                </p>
+            </step>
+            <step>
+                <p>
+                    <ui-path>MAC Address Policy</ui-path> should be "Generate new MAC addresses for all network adapters".
+                </p>
+            </step>
+            <step>
+                <p>
+                    Click <ui-path>Import</ui-path>
+                </p>
             </step>
 
             <step>
@@ -109,7 +129,7 @@
                 <p>Make sure docker-compose is installed on the virtual machine.</p>
 
                 <code-block lang="bash">
-                    docker-compose --version
+                    docker compose --version
                 </code-block>
             </step>
             <step>
@@ -163,7 +183,7 @@
                     Wake up the services:
                 </p>
 
-                <code-block lang="bash">docker-compose up -d</code-block>
+                <code-block lang="bash">docker compose up -d</code-block>
 
                 <tip>
                     <p><control>Want to know more about Docker and Compose?</control></p>
@@ -179,7 +199,7 @@
                     Check that the services are running:
                 </p>
 
-                <code-block lang="bash">docker-compose ps</code-block>
+                <code-block lang="bash">docker compose ps</code-block>
 
                 <p>
                     You should be able to ensure that all services are running given the output of the command.
