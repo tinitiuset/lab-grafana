@@ -16,7 +16,7 @@
 
     <list>
         <li>Virtual Box</li>
-        <li>La imagen de la máquina virtual ubicada en <code>/ruta/a/imagen</code></li>
+        <li>La imagen de la máquina virtual ubicada en <code>/sgoinfre/shared</code></li>
         <li>El <a href="https://github.com/tinitiuset/lab-grafana.git">repositorio</a> que contiene el código para el taller</li>
     </list>
 
@@ -26,7 +26,7 @@
         </p>
         <list>
             <li>VirtualBox esté instalado en tu máquina</li>
-            <li>Tienes al menos 20 GB de espacio en tu unidad de red.</li>
+            <li>Tienes al menos 20 GB de espacio.</li>
         </list>
     </chapter>
 
@@ -51,6 +51,26 @@
                         de partida.
                     </p>
                 </tip>
+            </step>
+            <step>
+                <p>
+                    Selecciona la imagen de la máquina virtual que has copiado previamente.
+                </p>
+            </step>
+            <step>
+                <p>
+                    <ui-path>Machine Base Folder</ui-path> deberá ser <code>/goinfre/$USER</code>
+                </p>
+            </step>
+            <step>
+                <p>
+                    <ui-path>MAC Address Policy</ui-path> debe estar establecido en "Generate new MAC addresses for all network adapters".
+                </p>
+            </step>
+            <step>
+                <p>
+                    Haz clic en <ui-path>Import</ui-path>
+                </p>
             </step>
 
             <step>
@@ -109,7 +129,7 @@
                 <p>Asegúrate de que Docker Compose esté instalado en la máquina virtual.</p>
 
                 <code-block lang="bash">
-                    docker-compose --version
+                    docker compose --version
                 </code-block>
             </step>
             <step>
@@ -163,7 +183,7 @@
                     Despierta los servicios:
                 </p>
 
-                <code-block lang="bash">docker-compose up -d</code-block>
+                <code-block lang="bash">docker compose up -d</code-block>
 
                 <tip>
                     <p><control>¿Quieres saber más sobre Docker y Compose?</control></p>
@@ -179,7 +199,7 @@
                     Verifica que los servicios estén en ejecución:
                 </p>
 
-                <code-block lang="bash">docker-compose ps</code-block>
+                <code-block lang="bash">docker compose ps</code-block>
 
                 <p>
                     Deberías asegurarte de que todos los servicios estén en ejecución según la salida del comando.
