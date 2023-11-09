@@ -19,7 +19,7 @@
                 <code>node_filefd_allocated</code>, podemos usar la siguiente consulta:
             </p>
 
-            <code-block lang="promql">
+            <code-block lang="console">
                 node_filefd_allocated
             </code-block>
         </chapter>
@@ -32,7 +32,7 @@
                 establecida en <code>node_exporter</code>:
             </p>
 
-            <code-block lang="promql">
+            <code-block lang="console">
                 node_filefd_allocated{job="node_exporter"}
             </code-block>
         </chapter>
