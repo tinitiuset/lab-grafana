@@ -82,4 +82,10 @@
         </deflist>
 
     </chapter>
+    <seealso>
+        <category ref="external">
+            <a href="https://openmetrics.io/" summary="">Open Metrics</a>
+            <a href="https://aws.amazon.com/microservices/" summary="">Micro Services by AWS</a>
+        </category>
+    </seealso>
 </topic>

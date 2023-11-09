@@ -12,6 +12,11 @@
 
         </description>
 
+        <spotlight>
+            <a href="Set-Up.topic" type="documents">Configuración del Laboratorio</a>
+            <a href="Observability-Stack-Components.topic" type="academy">Entendiendo el Stack de Obervabilidada</a>
+        </spotlight>
+
         <primary>
             <title>Contexto y Configuración del Taller</title>
             <a href="General-context.md"/>
@@ -28,20 +33,6 @@
             <a href="Loki.topic"/>
             <a href="Grafana.topic"/>
         </secondary>
-
-        <misc>
-            <links>
-                <group>
-                    <title>Temas Relacionados</title>
-                    <a href="https://play.grafana.org">Juega con Grafana</a>
-                    <a href="https://grafana.com/">Grafana</a>
-                    <a href="https://prometheus.io/">Prometheus</a>
-                    <a href="https://openmetrics.io/">Open Metrics</a>
-                    <a href="https://www.atlassian.com/devops">¿Qué es DevOps? por Atlassian</a>
-                    <a href="https://aws.amazon.com/microservices/">Microservicios por AWS</a>
-                </group>
-            </links>
-        </misc>
     </section-starting-page>
 
 </topic>
