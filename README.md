@@ -1,5 +1,7 @@
 # Grafana Lab
 
+Check out how to deploy documentation on [Releases](https://github.com/tinitiuset/lab-grafana/releases)
+
 The goals of this lab are:
 
 - As an individual:
