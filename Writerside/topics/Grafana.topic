@@ -49,4 +49,12 @@
         collected by Prometheus and Loki.
     </p>
 
+    <seealso>
+        <category ref="external">
+            <a href="https://play.grafana.org" summary="">Play with Grafana</a>
+            <a href="https://grafana.com/" summary="">Grafana</a>
+            <a href="https://openmetrics.io/" summary="">Open Metrics</a>
+        </category>
+    </seealso>
+
 </topic>

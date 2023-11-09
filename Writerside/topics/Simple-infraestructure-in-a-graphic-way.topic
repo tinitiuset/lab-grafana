@@ -6,4 +6,11 @@
        title="Simple infraestructure in a graphic way" id="Simple-infraestructure-in-a-graphic-way">
 
     <img src="Basic architecture.drawio.png" alt="Basic Observability Stack"/>
+    <seealso>
+        <category ref="external">
+            <a href="https://openmetrics.io/" summary="">Open Metrics</a>
+            <a href="https://www.atlassian.com/devops" summary="">What is Devops? by Atlassian</a>
+            <a href="https://aws.amazon.com/microservices/" summary="">Micro Services by AWS</a>
+        </category>
+    </seealso>
 </topic>
