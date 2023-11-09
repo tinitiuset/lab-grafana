@@ -29,7 +29,6 @@ services:
     volumes:
       - '/:/host:ro,rslave'
 
-# TEST ON LINUX
   cadvisor:
     image: gcr.io/cadvisor/cadvisor
     container_name: cadvisor
