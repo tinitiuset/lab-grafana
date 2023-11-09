@@ -19,7 +19,7 @@
                 metric, we can use the following query:
             </p>
 
-            <code-block lang="promql">
+            <code-block lang="console">
                 node_filefd_allocated
             </code-block>
         </chapter>
@@ -32,7 +32,7 @@
                 label set to <code>node_exporter</code>:
             </p>
 
-            <code-block lang="promql">
+            <code-block lang="console">
                 node_filefd_allocated{job=&quot;node_exporter&quot;}
             </code-block>
         </chapter>
